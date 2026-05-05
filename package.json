@@ -1,0 +1,34 @@
+{
+  "name": "resumeai-nlp-parser",
+  "version": "1.0.0",
+  "description": "AI-powered NLP Resume Parser with experimental UI/UX - Built by SRM Institute Students",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "pm2:start": "pm2 start ecosystem.config.cjs",
+    "pm2:stop": "pm2 stop resumeai",
+    "pm2:restart": "pm2 restart resumeai",
+    "pm2:logs": "pm2 logs resumeai --nostream",
+    "clean-port": "fuser -k 3000/tcp 2>/dev/null || true",
+    "test": "curl http://localhost:3000",
+    "git:commit": "git add . && git commit -m",
+    "git:status": "git status"
+  },
+  "keywords": [
+    "nlp",
+    "resume-parser",
+    "ai",
+    "hiring",
+    "recruitment",
+    "machine-learning"
+  ],
+  "author": "SRM Institute Students - Lavanya Saxena, Kashish Ali, Gautam Sikka, Aparna Singh",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "multer": "^2.0.2"
+  }
+}

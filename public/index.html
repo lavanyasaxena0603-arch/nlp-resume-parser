@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResumeAI | Smart Hiring Assistant</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <div class="logo-circle"></div>
+                <div class="logo-text">ResumeAI</div>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress" id="loadingProgress"></div>
+            </div>
+            <div class="loading-percentage" id="loadingPercentage">0%</div>
+            <div class="loading-blobs">
+                <div class="blob blob-1"></div>
+                <div class="blob blob-2"></div>
+                <div class="blob blob-3"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Glass Navigation -->
+    <nav class="glass-nav" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-brain"></i>
+                <span>Resume<span class="ai-text">AI</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#upload" class="nav-link">Upload</a>
+                <a href="#about" class="nav-link">About</a>
+            </div>
+            <div class="nav-cta">
+                <button class="cta-button" onclick="scrollToUpload()">
+                    <span>Get Started</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="aurora-bg">
+            <div class="aurora aurora-1"></div>
+            <div class="aurora aurora-2"></div>
+            <div class="aurora aurora-3"></div>
+        </div>
+        <div class="grain-texture"></div>
+        
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-star"></i>
+                <span>AI-Powered Recruitment</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="gradient-text">Transform Hiring</span>
+                <br>
+                <span class="typing-text" id="typingText"></span>
+            </h1>
+            <p class="hero-subtitle">
+                Advanced NLP technology that extracts, analyzes, and visualizes resume data
+                <br>in seconds. Built by students, designed for the future.
+            </p>
+            <div class="hero-buttons">
+                <button class="magnetic-button primary" onclick="scrollToUpload()">
+                    <span class="button-content">
+                        <i class="fas fa-upload"></i>
+                        Upload Resume
+                    </span>
+                    <div class="button-glow"></div>
+                </button>
+                <button class="magnetic-button secondary" onclick="scrollToAbout()">
+                    <span class="button-content">
+                        <i class="fas fa-info-circle"></i>
+                        Learn More
+                    </span>
+                </button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">&lt;2s</div>
+                    <div class="stat-label">Parse Time</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Data Points</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Resume Cards -->
+        <div class="floating-cards">
+            <div class="float-card card-1">
+                <i class="fas fa-code"></i>
+                <span>JavaScript</span>
+            </div>
+            <div class="float-card card-2">
+                <i class="fas fa-react"></i>
+                <span>React</span>
+            </div>
+            <div class="float-card card-3">
+                <i class="fas fa-python"></i>
+                <span>Python</span>
+            </div>
+            <div class="float-card card-4">
+                <i class="fas fa-database"></i>
+                <span>MongoDB</span>
+            </div>
+            <div class="float-card card-5">
+                <i class="fas fa-cloud"></i>
+                <span>AWS</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="section-header">
+            <span class="section-badge">
+                <i class="fas fa-sparkles"></i>
+                Unique Features
+            </span>
+            <h2 class="section-title">Uncommon <span class="gradient-text">Intelligence</span></h2>
+            <p class="section-subtitle">Beyond traditional parsing - we visualize, analyze, and predict</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card" data-reveal>
+                <div class="feature-icon">
+                    <i class="fas fa-fire"></i>
+                </div>
+                <h3>Resume Heatmap</h3>
+                <p>Visual intensity mapping of resume sections showing strength distribution</p>
+            </div>
+
+            <div class="feature-card" data-reveal>
+                <div class="feature-icon">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <h3>Skill Constellation</h3>
+                <p>Interactive graph connecting related skills in a cosmic network</p>
+            </div>
+
+            <div class="feature-card" data-reveal>
+                <div class="feature-icon">
+                    <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <h3>Strength Meter</h3>
+                <p>Real-time scoring system analyzing resume completeness and quality</p>
+            </div>
+
+            <div class="feature-card" data-reveal>
+                <div class="feature-icon">
+                    <i class="fas fa-radar"></i>
+                </div>
+                <h3>Job Role Radar</h3>
+                <p>Multi-axis matching visualization for different career paths</p>
+            </div>
+
+            <div class="feature-card" data-reveal>
+                <div class="feature-icon">
+                    <i class="fas fa-timeline"></i>
+                </div>
+                <h3>Experience Timeline</h3>
+                <p>Animated career journey with interactive milestones</p>
+            </div>
+
+            <div class="feature-card" data-reveal>
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Skill Gap Analyzer</h3>
+                <p>AI-powered suggestions for missing skills based on target roles</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section id="upload" class="upload-section">
+        <div class="upload-container">
+            <div class="upload-card glass-card">
+                <div class="upload-header">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h2>Upload Your Resume</h2>
+                    <p>Drag & drop or click to select • PDF, DOC, DOCX, TXT</p>
+                </div>
+                <div class="upload-zone" id="uploadZone">
+                    <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.txt" hidden>
+                    <div class="upload-icon">
+                        <i class="fas fa-file-upload"></i>
+                    </div>
+                    <div class="upload-text">
+                        <h3>Drop your resume here</h3>
+                        <p>or <span class="click-text">click to browse</span></p>
+                    </div>
+                    <div class="upload-progress hidden" id="uploadProgress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="progress-text" id="progressText">Uploading...</div>
+                    </div>
+                </div>
+                <div class="file-info hidden" id="fileInfo">
+                    <i class="fas fa-file-alt"></i>
+                    <span id="fileName"></span>
+                    <button class="remove-file" id="removeFile">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <button class="analyze-button" id="analyzeButton" disabled>
+                    <span class="button-content">
+                        <i class="fas fa-brain"></i>
+                        Analyze Resume
+                    </span>
+                    <div class="button-ripple"></div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="dashboard-section hidden">
+        <div class="dashboard-header">
+            <h2>Analysis <span class="gradient-text">Complete</span></h2>
+            <button class="new-upload-btn" onclick="resetDashboard()">
+                <i class="fas fa-plus"></i>
+                New Upload
+            </button>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Personal Info Card -->
+            <div class="dash-card glass-card" data-reveal>
+                <div class="card-header">
+                    <i class="fas fa-user"></i>
+                    <h3>Personal Information</h3>
+                </div>
+                <div class="card-content" id="personalInfo"></div>
+            </div>
+
+            <!-- Overall Score -->
+            <div class="dash-card glass-card score-card" data-reveal>
+                <div class="card-header">
+                    <i class="fas fa-star"></i>
+                    <h3>Resume Score</h3>
+                </div>
+                <div class="card-content">
+                    <canvas id="scoreCanvas"></canvas>
+                    <div class="score-details" id="scoreDetails"></div>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="dash-card glass-card wide" data-reveal>
+                <div class="card-header">
+                    <i class="fas fa-code"></i>
+                    <h3>Skills & Proficiency</h3>
+                </div>
+                <div class="card-content" id="skillsContent"></div>
+            </div>
+
+            <!-- Experience Timeline -->
+            <div class="dash-card glass-card wide" data-reveal>
+                <div class="card-header">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Experience Timeline</h3>
+                </div>
+                <div class="card-content" id="experienceTimeline"></div>
+            </div>
+
+            <!-- Job Matching Radar -->
+            <div class="dash-card glass-card" data-reveal>
+                <div class="card-header">
+                    <i class="fas fa-radar"></i>
+                    <h3>Job Role Match</h3>
+                </div>
+                <div class="card-content">
+                    <canvas id="radarCanvas"></canvas>
+                </div>
+            </div>
+
+            <!-- Resume Heatmap -->
+            <div class="dash-card glass-card" data-reveal>
+                <div class="card-header">
+                    <i class="fas fa-fire"></i>
+                    <h3>Resume Heatmap</h3>
+                </div>
+                <div class="card-content">
+                    <canvas id="heatmapCanvas"></canvas>
+                </div>
+            </div>
+
+            <!-- Skill Constellation -->
+            <div class="dash-card glass-card wide" data-reveal>
+                <div class="card-header">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>Skill Constellation</h3>
+                </div>
+                <div class="card-content">
+                    <canvas id="constellationCanvas"></canvas>
+                </div>
+            </div>
+
+            <!-- AI Suggestions -->
+            <div class="dash-card glass-card wide" data-reveal>
+                <div class="card-header">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>AI Recommendations</h3>
+                </div>
+                <div class="card-content" id="aiSuggestions"></div>
+            </div>
+
+            <!-- Raw JSON Viewer -->
+            <div class="dash-card glass-card json-card wide" data-reveal>
+                <div class="card-header">
+                    <i class="fas fa-code"></i>
+                    <h3>Raw JSON Data</h3>
+                    <button class="copy-json" id="copyJson">
+                        <i class="fas fa-copy"></i>
+                        Copy
+                    </button>
+                </div>
+                <div class="card-content">
+                    <pre id="jsonViewer"></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="section-header">
+            <span class="section-badge">
+                <i class="fas fa-info-circle"></i>
+                Our Mission
+            </span>
+            <h2 class="section-title">Built by <span class="gradient-text">Students</span></h2>
+            <p class="section-subtitle">Innovation from SRM Institute of Science and Technology</p>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-card" data-reveal>
+                <div class="about-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3>Problem Statement</h3>
+                <p>Traditional resume screening is time-consuming, inconsistent, and misses hidden talent. HR teams spend 23 hours per week manually reviewing resumes.</p>
+            </div>
+
+            <div class="about-card" data-reveal>
+                <div class="about-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Our Solution</h3>
+                <p>ResumeAI uses advanced NLP to extract, analyze, and visualize resume data instantly. We transform hours of work into seconds with AI precision.</p>
+            </div>
+
+            <div class="about-card" data-reveal>
+                <div class="about-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3>How It Works</h3>
+                <p>Upload → NLP Parsing → Data Extraction → AI Analysis → Visual Dashboard. Our system processes 50+ data points per resume.</p>
+            </div>
+
+            <div class="about-card" data-reveal>
+                <div class="about-icon">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <h3>Tech Stack</h3>
+                <p>Node.js + Express backend, Vanilla JS frontend, Advanced NLP algorithms, Canvas-based visualizations, Real-time processing.</p>
+            </div>
+        </div>
+
+        <div class="team-section">
+            <h3>The Team</h3>
+            <div class="team-grid">
+                <div class="team-card" data-reveal>
+                    <div class="team-avatar">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h4>Lavanya Saxena</h4>
+                    <p>Lead Developer</p>
+                </div>
+                <div class="team-card" data-reveal>
+                    <div class="team-avatar">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h4>Aparna Singh</h4>
+                    <p>UI/UX Designer</p>
+                </div>
+                <div class="team-card" data-reveal>
+                    <div class="team-avatar">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h4>Gautam Sikka</h4>
+                    <p>NLP Specialist</p>
+                </div>
+                <div class="team-card" data-reveal>
+                    <div class="team-avatar">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h4>Kashish Ali</h4>
+                    <p>Backend Engineer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-brain"></i>
+                <span>Resume<span class="ai-text">AI</span></span>
+            </div>
+            <p>Built with ❤️ by SRM Institute Students</p>
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="footer-copyright">© 2024 ResumeAI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
