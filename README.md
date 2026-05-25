@@ -19,7 +19,6 @@
 
 - **Lavanya Saxena** - Lead Developer
 - **Kashish Ali** - Backend Engineer  
-- **Gautam Sikka** - NLP Specialist
 - **Aparna Singh** - UI/UX Designer
 
 ---

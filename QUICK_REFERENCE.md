@@ -80,7 +80,6 @@ curl http://localhost:3000/api/health
 - Aparna Singh (UI/UX)
 - Lavanya Saxena (Lead)
 - Kashish Ali (Backend)
-- Gautam Sikka (NLP)
 
 **SRM Institute of Science and Technology**
 

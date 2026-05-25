@@ -23,7 +23,7 @@
     "recruitment",
     "machine-learning"
   ],
-  "author": "SRM Institute Students - Lavanya Saxena, Kashish Ali, Gautam Sikka, Aparna Singh",
+  "author": "SRM Institute Students - Lavanya Saxena, Kashish Ali, Aparna Singh",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^2.2.2",

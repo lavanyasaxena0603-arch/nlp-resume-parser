@@ -9,7 +9,7 @@
 ## ✅ PROJECT STATUS: COMPLETED
 
 **Built for:** SRM Institute of Science and Technology  
-**Team:** Lavanya Saxena, Kashish Ali, Gautam Sikka, Aparna Singh  
+**Team:** Lavanya Saxena, Kashish Ali, Aparna Singh  
 **Development Time:** Complete  
 **Status:** 🟢 Live & Running  
 
